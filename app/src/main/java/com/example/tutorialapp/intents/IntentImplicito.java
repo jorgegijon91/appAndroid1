@@ -3,6 +3,7 @@ package com.example.tutorialapp.intents;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -51,12 +52,22 @@ public class IntentImplicito extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Intent actionView y le pasamos la url
-               String url="https://www.marca.com//";
-               Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                // String url="https://www.marca.com//";
+                // Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 
-                   startActivity(intent);
+                //startActivity(intent);
+
+                //Intent para la alarma
+
+                Intent intentAlarma = new Intent(AlarmClock.ACTION_SET_ALARM)
+                        .putExtra(AlarmClock.EXTRA_MESSAGE, "Alarma clase")
+                        .putExtra(AlarmClock.EXTRA_HOUR, 7)
+                        .putExtra(AlarmClock.EXTRA_MINUTES, 10);
+                startActivity(intentAlarma);
+
 
             }
+
         });
     }
 }
