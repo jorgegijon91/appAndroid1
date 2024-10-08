@@ -26,7 +26,7 @@
         android:layout_height="31dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="48dp"
-        android:text="Comida"
+        android:text="@string/label_comida"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +36,7 @@
         android:layout_height="31dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="164dp"
-        android:text="Bebida"
+        android:text="@string/label_bebida"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

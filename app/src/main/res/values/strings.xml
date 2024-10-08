@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">TutorialApp</string>
+
+    <!-- Strings LABEL DE COMIDA -->
+    <String name="label_comida">COMIDA </String>
+
+    <!-- Strings LABEL DE BEBIDA -->
+    <String name="label_bebida">BEBIDA </String>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
