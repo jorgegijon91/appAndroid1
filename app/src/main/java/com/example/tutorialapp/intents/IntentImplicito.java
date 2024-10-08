@@ -51,7 +51,7 @@ public class IntentImplicito extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Intent actionView y le pasamos la url
-               String url="https://developer.android.com/guide/components/intents-common?hl=es-419";
+               String url="https://www.marca.com//";
                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 
                    startActivity(intent);
