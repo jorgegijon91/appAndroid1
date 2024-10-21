@@ -2,11 +2,14 @@ package com.example.tutorialapp.intents;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -27,6 +30,21 @@ public class IntentExplicito extends AppCompatActivity {
             return insets;
         });
 
+
+
+        ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK) {
+                        Intent data = result.getData();
+                        String texto = data.getStringExtra("Prueba");
+                        Log.d("PRUEBA", texto);
+                    }
+                }
+        );
+
+
+
         //Recuperar el botón de la vista
         Button btnPedir = findViewById(R.id.buttonPedir);
         EditText editTextComida = findViewById(R.id.areaComida);
@@ -43,8 +61,17 @@ public class IntentExplicito extends AppCompatActivity {
                 i.putExtra("Bebida", editTextBebida.getText().toString());
                 i.putExtra("Comida", editTextComida.getText().toString());
                 //Lanzarla, ejecutarla
-                startActivity(i);
+                //startActivity(i);
+
+                //Hacer el launch
+                activityResultLauncher.launch(i);
+
+
             }
-        });
+    });
+
+
+
     }
 }
+

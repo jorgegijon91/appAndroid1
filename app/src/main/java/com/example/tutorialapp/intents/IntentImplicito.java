@@ -1,5 +1,6 @@
 package com.example.tutorialapp.intents;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -66,6 +67,11 @@ public class IntentImplicito extends AppCompatActivity {
                 startActivity(intentAlarma);
 
 
+                Intent intent2 = getIntent();
+
+                intent2.putExtra("Prueba", "De vuelta");
+                setResult(Activity.RESULT_OK,intent2); //Indicamos con RESULT_OK que todo ha salido correctamente
+                finish(); //acabamos la actividad y volvemos a MainActivity
             }
 
         });
