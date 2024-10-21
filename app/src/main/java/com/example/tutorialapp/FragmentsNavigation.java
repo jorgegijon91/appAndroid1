@@ -22,6 +22,5 @@ public class FragmentsNavigation extends AppCompatActivity {
         });
     }
 
-    //Recuperar fragmentos
 
 }
